@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+:root {
+  --bg-color : #D8DED7;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -32,7 +36,20 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+@font-face {
+  font-family: 'EightOne';
+  src: url('./fonts/eight_one/Eight\ One.ttf');
+}
+
+@font-face {
+  font-family: 'Vonique';
+  src: url('./fonts/vonique_92/Vonique\ 92_D.otf');
 }
