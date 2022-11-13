@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/elmer-website/static/css/main.c8f0389e.css",
-    "main.js": "/elmer-website/static/js/main.87501d3d.js",
+    "main.js": "/elmer-website/static/js/main.6a6c7f17.js",
     "static/js/787.b89902bb.chunk.js": "/elmer-website/static/js/787.b89902bb.chunk.js",
     "static/media/bg2.jpg": "/elmer-website/static/media/bg2.2a9e8a859a02ed7f9528.jpg",
     "static/media/Roboto-Regular.ttf": "/elmer-website/static/media/Roboto-Regular.f25bd05915c1a3468d3d.ttf",
@@ -9,11 +9,11 @@
     "static/media/Eight One.ttf": "/elmer-website/static/media/Eight One.3bce835f1c0be0dae993.ttf",
     "index.html": "/elmer-website/index.html",
     "main.c8f0389e.css.map": "/elmer-website/static/css/main.c8f0389e.css.map",
-    "main.87501d3d.js.map": "/elmer-website/static/js/main.87501d3d.js.map",
+    "main.6a6c7f17.js.map": "/elmer-website/static/js/main.6a6c7f17.js.map",
     "787.b89902bb.chunk.js.map": "/elmer-website/static/js/787.b89902bb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c8f0389e.css",
-    "static/js/main.87501d3d.js"
+    "static/js/main.6a6c7f17.js"
   ]
 }
