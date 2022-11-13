@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/elmer-website/static/css/main.9c050071.css",
+    "main.js": "/elmer-website/static/js/main.6455afe4.js",
+    "static/js/787.b89902bb.chunk.js": "/elmer-website/static/js/787.b89902bb.chunk.js",
+    "static/media/bg2.jpg": "/elmer-website/static/media/bg2.2a9e8a859a02ed7f9528.jpg",
+    "static/media/Vonique 92_D.otf": "/elmer-website/static/media/Vonique 92_D.b0cfcdd68947dc1364b1.otf",
+    "static/media/Eight One.ttf": "/elmer-website/static/media/Eight One.3bce835f1c0be0dae993.ttf",
+    "index.html": "/elmer-website/index.html",
+    "main.9c050071.css.map": "/elmer-website/static/css/main.9c050071.css.map",
+    "main.6455afe4.js.map": "/elmer-website/static/js/main.6455afe4.js.map",
+    "787.b89902bb.chunk.js.map": "/elmer-website/static/js/787.b89902bb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9c050071.css",
+    "static/js/main.6455afe4.js"
+  ]
+}
