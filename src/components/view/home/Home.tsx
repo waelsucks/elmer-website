@@ -48,8 +48,11 @@ function Home() {
 
                 >
 
-                    <Typography variant='h2' color="primary">
-                        Latest Release
+                    <Typography variant='h2' color="primary" sx={{
+                        textDecoration: 'underline',
+                        textDecorationThickness: '2.5px',
+                    }} >
+                        LATEST RELEASE
                     </Typography>
 
                     <Divider sx={{ mb: 5 }} />

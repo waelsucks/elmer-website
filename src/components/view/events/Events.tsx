@@ -6,8 +6,11 @@ type Props = {}
 function Events({ }: Props) {
     return (
         <Box>
-            <Typography variant='h4' color="primary">
-                coming soon...
+            <Typography variant='h2' color="primary" sx={{
+                textDecoration: 'underline',
+                textDecorationThickness: '2.5px',
+            }} >
+                BOOKING FOR 2023
             </Typography>
         </Box>
   )

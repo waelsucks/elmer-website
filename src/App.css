@@ -53,3 +53,8 @@
   font-family: 'Vonique';
   src: url('./fonts/vonique_92/Vonique\ 92_D.otf');
 }
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./fonts/roboto/Roboto-Regular.ttf');
+}
