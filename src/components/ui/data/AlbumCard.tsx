@@ -38,7 +38,7 @@ function AlbumCard({ album }: Props) {
 
         >
 
-            <Typography variant='h4' color={"var(--bg-color)"} >
+            <Typography variant='h4' color={"var(--bg-color)"} sx={{ fontSize: "25px" }} >
                 {album.name}
             </Typography>
 

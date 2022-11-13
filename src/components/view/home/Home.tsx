@@ -68,7 +68,9 @@ function Home() {
                     </motion.div>
 
                 </Box>
-            )}
+            ) 
+            
+            }
 
         </Container>
     )

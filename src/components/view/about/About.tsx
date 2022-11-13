@@ -17,8 +17,8 @@ function About({ }: Props) {
                 alignItems: 'center',
                 height: '100%',
                 width: '100%',
-                paddingLeft: 20,
-                paddingRight: 20,
+                paddingLeft: 25,
+                paddingRight: 25,
                 paddingTop: 5,
                 paddingBottom: 5,
 
@@ -46,7 +46,7 @@ function About({ }: Props) {
 
             <Divider sx={{ mb: 5 }} />
 
-            <Typography variant='h5' color="primary">
+            <Typography variant='h5' sx={{ fontSize: "18px" }} color="primary" textAlign={"center"} >
                 Edvin Elmersson, or elmer, is a 25 year old Swedish multi-instrumentalist, singer and producer based in Malmö, Sweden.
 
                 <br /> <br />
@@ -61,7 +61,7 @@ function About({ }: Props) {
 
                 <br /> <br />
 
-                Earlier collaborations include artists such as Josef Slunge, Bella Leonette, Wa’el, Ture Butler among others. <br />
+                Earlier collaborations include artists such as Josef Slunge, Bella Leonette, Wa’el, <br /> Ture Butler among others. <br />
                 As a double bass player in the big band Kristianstad XL Big Band he has also got the opportunity to work with jazz artists such as Peter Asplund, Isabella Lundgren and Vivian Buczek.
 
                 <br /> <br />
