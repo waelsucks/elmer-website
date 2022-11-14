@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const client_id = '3e7ce777c40c4538ad8f812af1573a58';
-const client_secret = '1e24d11b4c43402fae806159cec99bd6';
+const client_id = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
+const client_secret = process.env.REACT_APP_SPOTIFY_CLIENT_SECRET;
 
 const authParams = {
 
