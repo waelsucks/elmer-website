@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import MainView from './components/ui/general/MainView';
 import { Box, ThemeProvider, Typography } from '@mui/material';
