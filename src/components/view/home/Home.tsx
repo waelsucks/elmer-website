@@ -34,7 +34,7 @@ function Home() {
         
         >
 
-            {albums?.length! > 0 && (
+            {albums && (
                 <Box 
                 
                     sx={{
