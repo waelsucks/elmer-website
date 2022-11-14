@@ -7,7 +7,7 @@ import { spotifyID } from '../../../global/Models'
 import InstagramIcon from '@mui/icons-material/Instagram';
 import { link } from 'fs'
 
-const maja_link = "https://www.instagram.com/gallstadfoto"
+const maja_link = "https://www.instagram.com/maja.gallstad"
 
 type Props = {}
 
