@@ -2,10 +2,8 @@ import { Box, Container, Divider, Typography } from '@mui/material'
 import { motion } from 'framer-motion'
 import React, { useContext, useEffect, useState } from 'react'
 
-import SpotifyWebApi from 'spotify-web-api-js'
 import { SpotifyContext } from '../../../global/Contexts'
 import { spotifyID } from '../../../global/Models'
-import useGetSpotifyToken from '../../hooks/useGetSpotifyToken'
 import AlbumCard from '../../ui/data/AlbumCard'
 
 function Home() {
@@ -27,7 +25,7 @@ function Home() {
             }
         );
 
-    }, [])
+    }, [spotifyApi])
 
     return (
         <Container
