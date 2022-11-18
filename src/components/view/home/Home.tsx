@@ -6,11 +6,29 @@ import { SpotifyContext } from '../../../global/Contexts'
 import { spotifyID } from '../../../global/Models'
 import AlbumCard from '../../ui/data/AlbumCard'
 
+<script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="tpnuomervcudmix"></script>
+
+
 function Home() {
 
     const [albums, setAlbums] = useState<any[] | null>(null)
 
     const spotifyApi = useContext(SpotifyContext)
+
+
+    const x = <a
+        href="https://www.dropbox.com/s/u0bdwmkjmqld9l2/dbx-supporting-distributed-work.gif?dl=0"
+        className="dropbox-embed"
+    ></a>
+
+    
+
+
+    useEffect(() => {
+
+
+
+    }, [])
 
     useEffect(() => {
 
@@ -29,12 +47,12 @@ function Home() {
 
     return (
         <Container
-        
+
         >
 
             {albums && (
-                <Box 
-                
+                <Box
+
                     sx={{
                         display: 'flex',
                         flexDirection: 'column',
@@ -66,8 +84,8 @@ function Home() {
                     </motion.div>
 
                 </Box>
-            ) 
-            
+            )
+
             }
 
         </Container>
