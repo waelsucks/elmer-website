@@ -8,6 +8,7 @@ import Home from './components/view/home/Home';
 import { SpotifyContext, ViewContext } from './global/Contexts';
 import SpotifyWebApi from 'spotify-web-api-js'
 import useGetSpotifyToken from './components/hooks/useGetSpotifyToken';
+import MobileView from './components/ui/general/MobileView';
 
 function App() {
 
@@ -36,11 +37,15 @@ function App() {
                     <Box>
                         <Typography variant='h4' color="white" sx={{
                             textAlign: 'center',
-                            marginTop: '5vh',
+                            // marginTop: '5vh',
                             fontSize: '30px',
-                            
+
                         }} >
-                            This website is not optimized for mobile devices. <br />  Please use a desktop computer.
+                            <SpotifyContext.Provider value={spotifyApi}>
+                                <ViewContext.Provider value={{ view, setView }}>
+                                    <MobileView />
+                                </ViewContext.Provider>
+                            </SpotifyContext.Provider>
                         </Typography>
                     </Box>
 
