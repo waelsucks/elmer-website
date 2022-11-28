@@ -8,6 +8,8 @@ import useGetSpotifyToken from './hooks/useGetSpotifyToken';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import MainView from './components/ui/general/MainView';
 import Home from './components/views/home/Home';
+import createCache from '@emotion/cache';
+import { CacheProvider } from '@emotion/react';
 
 function App() {
 
@@ -17,10 +19,16 @@ function App() {
 
     spotify.setAccessToken(useGetSpotifyToken())
 
+    const cache = createCache({
+        key: 'css',
+        prepend: true,
+    })
+
     return (
 
 
-        <ViewContext.Provider value={{ view, setView }}>
+        <CacheProvider value={cache} >
+            <ViewContext.Provider value={{ view, setView }}>
             <SpotifyContext.Provider value={{ spotify, setSpotify }}>
                 <MobileContext.Provider value={{ isMobile, setIsMobile }}>
 
@@ -29,6 +37,7 @@ function App() {
                 </MobileContext.Provider>
             </SpotifyContext.Provider>
         </ViewContext.Provider>
+        </CacheProvider>
 
     );
 }

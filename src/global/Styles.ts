@@ -1,6 +1,6 @@
 import '../App.css'
 
-import { createTheme } from "@mui/material";
+import { createTheme, makeStyles } from "@mui/material";
 
 const font = "'Poppins', sans-serif"
 const font2 = "EightOne"
@@ -39,6 +39,6 @@ export const defaultTheme = createTheme({
             // fontSize: "1.25rem",
             // fontWeight: 300,
         }
-    },
+    }
 
 })
