@@ -18,21 +18,18 @@ function App() {
     spotify.setAccessToken(useGetSpotifyToken())
 
     return (
-        <ThemeProvider theme={defaultTheme}>
 
-            <CssBaseline />
 
-            <ViewContext.Provider value={{ view, setView }}>
-                <SpotifyContext.Provider value={{ spotify, setSpotify }}>
-                    <MobileContext.Provider value={{ isMobile, setIsMobile }}>
+        <ViewContext.Provider value={{ view, setView }}>
+            <SpotifyContext.Provider value={{ spotify, setSpotify }}>
+                <MobileContext.Provider value={{ isMobile, setIsMobile }}>
 
-                        <MainView />
+                    <MainView />
 
-                    </MobileContext.Provider>
-                </SpotifyContext.Provider>
-            </ViewContext.Provider>
+                </MobileContext.Provider>
+            </SpotifyContext.Provider>
+        </ViewContext.Provider>
 
-        </ThemeProvider>
     );
 }
 
