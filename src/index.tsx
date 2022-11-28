@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { CssBaseline, ThemeProvider } from '@mui/material';
+import { CssBaseline, StyledEngineProvider, ThemeProvider } from '@mui/material';
 import { defaultTheme } from './global/Styles';
 
 const root = ReactDOM.createRoot(
@@ -11,10 +11,13 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   // <React.StrictMode>
-  <ThemeProvider theme={defaultTheme}>
-    <CssBaseline />
-    <App />
-  </ThemeProvider>
+  <StyledEngineProvider injectFirst>
+    <ThemeProvider theme={defaultTheme}>
+      <CssBaseline />
+      <App />
+    </ThemeProvider>
+  </StyledEngineProvider>
+
   // </React.StrictMode>
 );
 
