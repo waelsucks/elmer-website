@@ -1,26 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
+import { ViewContext, SpotifyContext, MobileContext } from './global/Contexts';
+import { defaultTheme } from './global/Styles';
+import SpotifyWebApi from 'spotify-web-api-js';
+import useGetSpotifyToken from './hooks/useGetSpotifyToken';
+import { CssBaseline, ThemeProvider } from '@mui/material';
+import MainView from './components/ui/general/MainView';
+import Home from './components/views/home/Home';
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const [view, setView] = useState(<Home />)
+    const [isMobile, setIsMobile] = useState(window.screen.width > 1200 ? false : true)
+    const [spotify, setSpotify] = useState(new SpotifyWebApi())
+
+    spotify.setAccessToken(useGetSpotifyToken())
+
+    return (
+        <ThemeProvider theme={defaultTheme}>
+
+            <CssBaseline />
+
+            <ViewContext.Provider value={{ view, setView }}>
+                <SpotifyContext.Provider value={{ spotify, setSpotify }}>
+                    <MobileContext.Provider value={{ isMobile, setIsMobile }}>
+
+                        <MainView />
+
+                    </MobileContext.Provider>
+                </SpotifyContext.Provider>
+            </ViewContext.Provider>
+
+        </ThemeProvider>
+    );
 }
 
 export default App;
