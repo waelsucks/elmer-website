@@ -26,17 +26,6 @@ function Home() {
 
         getAlbums()
 
-        // spotifyApi.getArtistAlbums(process.env.REACT_APP_SPOTIFY_ID!).then(
-
-        //     function (data) {
-        //         setAlbums(data.items)
-        //     },
-
-        //     function (err) {
-        //         console.error(err);
-        //     }
-        // );
-
     }, [spotifyApi])
 
     return (
@@ -64,7 +53,7 @@ function Home() {
 
         >
 
-            <Typography variant={useContext(MobileContext).isMobile ? "h2" : "h1"} sx={{
+            <Typography variant={useContext(MobileContext).isMobile ? "h2" : "h2"} sx={{
                 textDecoration: "underline",
                 textDecorationThickness: '3.5px',
             }} color="primary" >Latest Release</Typography>
