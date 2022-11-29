@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 
-import { ViewContext, SpotifyContext, MobileContext } from './global/Contexts';
+import { ViewContext, SpotifyContext, MobileContext, SpotifyToken } from './global/Contexts';
 import { defaultTheme } from './global/Styles';
 import SpotifyWebApi from 'spotify-web-api-js';
 import useGetSpotifyToken from './hooks/useGetSpotifyToken';
@@ -15,49 +15,32 @@ function App() {
 
     const [view, setView] = useState(<Home />)
     const [isMobile, setIsMobile] = useState(window.screen.width > 1200 ? false : true)
-    const [spotify, setSpotify] = useState(new SpotifyWebApi())
 
     const token = useGetSpotifyToken()
+    const spotify = new SpotifyWebApi()
 
     useEffect(() => {
 
-        const setToken = async () => {
+        spotify.setAccessToken(token)
 
-            if (token) {
-
-                spotify.setAccessToken(token)
-
-                setSpotify(spotify)
-
-            }
-
-        }
-
-        setToken()
-
-    }, [token])
-
-    const cache = createCache({
-
-        key: 'css',
-        prepend: true,
-
-    })
+    }, [spotify, token])
 
     return (
 
+        <ViewContext.Provider value={{ view, setView }}>
+            <SpotifyContext.Provider value={{ spotify }}>
+                <MobileContext.Provider value={{ isMobile, setIsMobile }}>
 
-        <CacheProvider value={cache} >
-            <ViewContext.Provider value={{ view, setView }}>
-                <SpotifyContext.Provider value={{ spotify, setSpotify }}>
-                    <MobileContext.Provider value={{ isMobile, setIsMobile }}>
+                    <SpotifyToken.Provider value={token}>
 
                         <MainView />
 
-                    </MobileContext.Provider>
-                </SpotifyContext.Provider>
-            </ViewContext.Provider>
-        </CacheProvider>
+
+                    </SpotifyToken.Provider>
+
+                </MobileContext.Provider>
+            </SpotifyContext.Provider>
+        </ViewContext.Provider>
 
     );
 }

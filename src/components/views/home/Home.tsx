@@ -2,7 +2,7 @@ import { Box, Divider, Typography } from '@mui/material'
 import { motion } from 'framer-motion'
 import React, { useContext, useEffect, useState } from 'react'
 import { Default } from '../../../global/Animations'
-import { MobileContext, SpotifyContext } from '../../../global/Contexts'
+import { MobileContext, SpotifyContext, SpotifyToken } from '../../../global/Contexts'
 import AlbumCard from '../../ui/data/AlbumCard'
 
 function Home() {
@@ -10,19 +10,32 @@ function Home() {
     const [albums, setAlbums] = useState<any[] | null>(null)
 
     const spotifyApi = useContext(SpotifyContext).spotify
+    const token = useContext(SpotifyToken)
 
     useEffect(() => {
 
-        spotifyApi.getArtistAlbums(process.env.REACT_APP_SPOTIFY_ID!).then(
+        const getAlbums = async () => {
 
-            function (data) {
-                setAlbums(data.items)
-            },
+            spotifyApi.setAccessToken(token)
 
-            function (err) {
-                console.error(err);
-            }
-        );
+            const response = await spotifyApi.getArtistAlbums(process.env.REACT_APP_SPOTIFY_ID!)
+
+            setAlbums(response.items)
+
+        }
+
+        getAlbums()
+
+        // spotifyApi.getArtistAlbums(process.env.REACT_APP_SPOTIFY_ID!).then(
+
+        //     function (data) {
+        //         setAlbums(data.items)
+        //     },
+
+        //     function (err) {
+        //         console.error(err);
+        //     }
+        // );
 
     }, [spotifyApi])
 

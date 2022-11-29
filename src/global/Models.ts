@@ -10,7 +10,6 @@ export interface IViewContext {
 export interface ISpotifyContext {
 
     spotify: SpotifyWebApi.SpotifyWebApiJs;
-    setSpotify: (spotify: SpotifyWebApi.SpotifyWebApiJs) => void;
 
 }
 

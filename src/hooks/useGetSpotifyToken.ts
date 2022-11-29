@@ -17,37 +17,23 @@ const authParams = {
 
 export default function useGetSpotifyToken() {
 
-    
-    const [token, setToken] = useState(null);
-
-    const getToken = async () => {
-
-        const response = await fetch('https://accounts.spotify.com/api/token', authParams);
-
-        const data = await response.json();
-
-        setToken(data.access_token);
-
-    }
+    const [token, setToken] = useState("");
 
     useEffect(() => {
+
+        const getToken = async () => {
+
+            const response = await fetch('https://accounts.spotify.com/api/token', authParams);
+
+            const data = await response.json();
+
+            setToken(data.access_token);
+
+        }
 
         getToken();
 
     }, [])
-
-
-    // useEffect(() => {
-
-    //     fetch('https://accounts.spotify.com/api/token', authParams)
-
-    //         .then(response => response.json())
-            
-    //         .then(data => {
-    //             setToken(data.access_token);
-    //         });
-
-    // }, []);
 
     return token;
 
