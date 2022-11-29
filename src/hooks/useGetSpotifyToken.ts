@@ -19,17 +19,34 @@ export default function useGetSpotifyToken() {
 
     const [token, setToken] = useState(null);
 
+    const getToken = async () => {
+
+        const response = await fetch('https://accounts.spotify.com/api/token', authParams);
+
+        const data = await response.json();
+
+        setToken(data.access_token);
+
+    }
+
     useEffect(() => {
 
-        fetch('https://accounts.spotify.com/api/token', authParams)
+        getToken();
 
-            .then(response => response.json())
+    }, [])
+
+
+    // useEffect(() => {
+
+    //     fetch('https://accounts.spotify.com/api/token', authParams)
+
+    //         .then(response => response.json())
             
-            .then(data => {
-                setToken(data.access_token);
-            });
+    //         .then(data => {
+    //             setToken(data.access_token);
+    //         });
 
-    }, []);
+    // }, []);
 
     return token;
 
