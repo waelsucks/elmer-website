@@ -21,7 +21,7 @@ function App() {
 
     useEffect(() => {
 
-        const getToken = async () => {
+        const setToken = async () => {
 
             if (token) {
 
@@ -33,9 +33,9 @@ function App() {
 
         }
 
-        getToken()
+        setToken()
 
-    }, [spotify])
+    }, [token])
 
     const cache = createCache({
 
