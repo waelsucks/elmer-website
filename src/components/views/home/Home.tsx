@@ -17,7 +17,6 @@ function Home() {
 
             function (data) {
                 setAlbums(data.items)
-                console.log('Artist albums', data.items)
             },
 
             function (err) {

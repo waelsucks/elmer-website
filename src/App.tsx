@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 
 import { ViewContext, SpotifyContext, MobileContext } from './global/Contexts';
@@ -17,7 +17,11 @@ function App() {
     const [isMobile, setIsMobile] = useState(window.screen.width > 1200 ? false : true)
     const [spotify, setSpotify] = useState(new SpotifyWebApi())
 
-    spotify.setAccessToken(useGetSpotifyToken())
+    useEffect(() => {
+
+        spotify.setAccessToken(useGetSpotifyToken())
+
+    }, [])
 
     const cache = createCache({
         key: 'css',
