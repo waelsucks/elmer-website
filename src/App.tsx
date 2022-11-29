@@ -21,19 +21,27 @@ function App() {
 
     useEffect(() => {
 
-        if (token) {
+        const getToken = async () => {
 
-            spotify.setAccessToken(token)
+            if (token) {
+
+                spotify.setAccessToken(token)
+
+                setSpotify(spotify)
+
+            }
 
         }
 
-    }, [token, spotify])
+        getToken()
+
+    }, [spotify])
 
     const cache = createCache({
 
         key: 'css',
         prepend: true,
-        
+
     })
 
     return (
@@ -41,14 +49,14 @@ function App() {
 
         <CacheProvider value={cache} >
             <ViewContext.Provider value={{ view, setView }}>
-            <SpotifyContext.Provider value={{ spotify, setSpotify }}>
-                <MobileContext.Provider value={{ isMobile, setIsMobile }}>
+                <SpotifyContext.Provider value={{ spotify, setSpotify }}>
+                    <MobileContext.Provider value={{ isMobile, setIsMobile }}>
 
-                    <MainView />
+                        <MainView />
 
-                </MobileContext.Provider>
-            </SpotifyContext.Provider>
-        </ViewContext.Provider>
+                    </MobileContext.Provider>
+                </SpotifyContext.Provider>
+            </ViewContext.Provider>
         </CacheProvider>
 
     );
