@@ -21,13 +21,19 @@ function App() {
 
     useEffect(() => {
 
-        spotify.setAccessToken(token)
+        if (token) {
+
+            spotify.setAccessToken(token)
+
+        }
 
     }, [token, spotify])
 
     const cache = createCache({
+
         key: 'css',
         prepend: true,
+        
     })
 
     return (

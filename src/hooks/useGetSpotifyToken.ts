@@ -17,7 +17,7 @@ const authParams = {
 
 export default function useGetSpotifyToken() {
 
-    const [token, setToken] = useState("");
+    const [token, setToken] = useState(null);
 
     useEffect(() => {
 
