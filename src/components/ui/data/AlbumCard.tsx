@@ -1,4 +1,5 @@
 import { Card, Typography } from '@mui/material'
+import { motion } from 'framer-motion'
 import React from 'react'
 
 type Props = {
@@ -10,6 +11,10 @@ function AlbumCard({ album }: Props) {
         <Card
 
             elevation={15}
+
+            component={motion.div}
+
+            whileHover={{ scale: 1.05 }}
             
 
             sx={{

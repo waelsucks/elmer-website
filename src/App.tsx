@@ -17,11 +17,13 @@ function App() {
     const [isMobile, setIsMobile] = useState(window.screen.width > 1200 ? false : true)
     const [spotify, setSpotify] = useState(new SpotifyWebApi())
 
+    const token = useGetSpotifyToken()
+
     useEffect(() => {
 
-        spotify.setAccessToken(useGetSpotifyToken())
+        spotify.setAccessToken(token)
 
-    }, [])
+    }, [token, spotify])
 
     const cache = createCache({
         key: 'css',
