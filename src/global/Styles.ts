@@ -31,11 +31,11 @@ export const defaultTheme = createTheme({
 
     typography: {
 
-        fontFamily: font,
+        fontFamily: font3,
 
         h5: {
 
-            fontFamily: font,
+            fontFamily: font4,
             // fontSize: "1.25rem",
             // fontWeight: 300,
         }
