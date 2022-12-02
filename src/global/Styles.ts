@@ -35,7 +35,7 @@ export const defaultTheme = createTheme({
 
         h5: {
 
-            fontFamily: font4,
+            fontFamily: font,
             // fontSize: "1.25rem",
             // fontWeight: 300,
         }
