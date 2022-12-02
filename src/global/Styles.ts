@@ -31,7 +31,7 @@ export const defaultTheme = createTheme({
 
     typography: {
 
-        fontFamily: font3,
+        fontFamily: font,
 
         h5: {
 
