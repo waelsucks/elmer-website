@@ -103,15 +103,11 @@ function MenuItems() {
                                 elevation: 0,
 
                                 sx: {
+
                                     minWidth: '60vw',
-                                    // backgroundColor: 'var(--primary-color)',
-                                    // color: "white",   
                                     
                                     backgroundColor: "rgb(245, 245, 240)",
                                     color: 'var(--primary-color)',
-
-                                    // backdropFilter: 'blur(7px)',
-
 
                                 }
                             

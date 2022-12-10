@@ -67,7 +67,8 @@ function About({ }: Props) {
 
                 <br /> <br />
 
-                elmer released his debut single ’Denial’ on the 4th of November. His EP ’Right Now’ is set to be released on 1st of December.
+                {/* elmer released his debut single ’Denial’ on the 4th of November. His EP ’Right Now’ is set to be released on 1st of December. */}
+                elmer released his debut EP 'Right Now' on the 1st of December 2022.
             </Typography>
 
         </Box>

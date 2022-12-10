@@ -6,6 +6,8 @@ import SpatialAudioOffIcon from '@mui/icons-material/SpatialAudioOff';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import { Box, IconButton, Link } from '@mui/material';
 
+import SpotifyIcon from '../../../global/images/SpotifyIcon.png'
+
 function FastLinks() {
 
     const instagramLink = "https://www.instagram.com/edvinelmersson/"
@@ -18,6 +20,10 @@ function FastLinks() {
         { name: "Instagram", icon: <InstagramIcon />, link: instagramLink },
         { name: "Music", icon: <LibraryMusicIcon />, link: musicLink },
         { name: "Spotify", icon: <SpatialAudioOffIcon />, link: spotifyLink },
+        
+
+        // { name: "Spotify", icon: <img src={SpotifyIcon} alt="Spotify" color='var(--primary-color)' style={{ width: '25px', height: '25px', filter: "var(--primary-color)" }} />, link: spotifyLink},
+
         { name: "YouTube", icon: <YouTubeIcon />, link: youtubeLink },
 
     ]
