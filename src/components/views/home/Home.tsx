@@ -54,8 +54,11 @@ function Home() {
         >
 
             <Typography variant={useContext(MobileContext).isMobile ? "h2" : "h2"} sx={{
-                textDecoration: "underline",
+                // textDecoration: "underline",
                 textDecorationThickness: '3.5px',
+                fontFamily: "Eightone",
+                textAlign: "center",
+
             }} color="primary" >Latest Release</Typography>
 
             {/* <Divider sx={{ width: '100%', my: 5 }} /> */}

@@ -30,7 +30,7 @@ function Store({ }: Props) {
         >
 
             <Typography variant='h2' color="primary" sx={{
-                textDecoration: 'underline',
+                // textDecoration: 'underline',
                 textDecorationThickness: '2.5px',
             }} >
                 COMING SOON

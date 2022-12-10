@@ -30,11 +30,17 @@ function Events({ }: Props) {
         >
 
             <Typography variant='h2' color="primary" sx={{
-                textDecoration: 'underline',
+                // textDecoration: 'underline',
                 textDecorationThickness: '2.5px',
             }} >
-                PLANNING FOR 2023
+                PLANNING FOR
             </Typography>
+
+            <Typography variant='h2' color="primary" sx={{
+                    fontFamily: 'VoniQue',
+                }}>
+                    2023
+                </Typography>
 
         </Box>
     )

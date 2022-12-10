@@ -1,8 +1,9 @@
 import { Box, Container } from '@mui/material'
 import { ref, listAll, getDownloadURL } from 'firebase/storage'
 import { motion } from 'framer-motion'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Default } from '../../../global/Animations'
+import { MobileContext } from '../../../global/Contexts'
 import { storage } from '../../../hooks/useFirebase'
 import MenuBar from '../navigation/MenuBar'
 import MainDisplay from './MainDisplay'
@@ -15,6 +16,8 @@ function MainView({ }: Props) {
 
     const storageRef = ref(storage)
     const imagesRef = ref(storageRef, 'background/')
+
+    const { isMobile } = useContext(MobileContext)
 
     useEffect(() => {
 
@@ -39,13 +42,13 @@ function MainView({ }: Props) {
     return (
 
         <Box
-    
+
             component={motion.div}
 
             sx={{
 
-                width: '100%',
-                height: '100%',
+                width: '100vw',
+                height: '100vh',
 
                 display: 'flex',
 
@@ -56,6 +59,12 @@ function MainView({ }: Props) {
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
 
+                // padding: 0,
+
+                pl: !isMobile ? "10vw" : 0,
+                pr: !isMobile ? "10vw" : 0
+
+
             }}
 
             initial={{ opacity: 0 }}
@@ -65,10 +74,10 @@ function MainView({ }: Props) {
                 delay: 1,
                 duration: 0.5
             }}
-        
+
         >
 
-            <Container
+            <Box
 
                 // maxWidth="xl"
 
@@ -80,8 +89,8 @@ function MainView({ }: Props) {
 
                 sx={{
 
-                    width: '100vw',
-                    height: '100vh',
+                    width: '100%',
+                    height: '100%',
 
                     display: 'grid',
                     gridTemplateColumns: '1fr',
@@ -89,15 +98,20 @@ function MainView({ }: Props) {
 
                     backgroundColor: 'var(--bg-color)',
 
+                    overflow: "scroll"
+
                 }}
 
             >
 
+
+
                 <MenuBar />
+
                 <MainDisplay />
                 {/* <Footer /> */}
 
-            </Container>
+            </Box>
 
         </Box>
 

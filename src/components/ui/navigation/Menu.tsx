@@ -10,6 +10,10 @@ import Menu from '@mui/material/Menu';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import SpeedDialIcon from '@mui/material/SpeedDialIcon';
 import FastLinks from './FastLinks'
+import { MoreHorizOutlined } from '@mui/icons-material'
+
+import MenuIcon from '@mui/icons-material/Menu';
+import { motion } from 'framer-motion'
 
 function MenuItems() {
 
@@ -61,13 +65,26 @@ function MenuItems() {
             {useContext(MobileContext).isMobile
 
                 ? (
-                    <div>
+                    <div
+                    
+                        style={{
+                            width: '100%',
+                            height: '100%',
+                            display: 'flex',
+                            justifyContent: 'center',
+
+                            padding: 0,
+                            margin: 0,
+
+                        }}
+                    
+                    >
                         <IconButton
 
                             onClick={handleClick}
 
                         >
-                            <MoreVertIcon />
+                            <MenuIcon />
                         </IconButton>
 
                         <Menu
@@ -76,14 +93,26 @@ function MenuItems() {
                             open={open}
                             onClose={handleClose}
 
+                            anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+                            transformOrigin={{ vertical: 0 , horizontal: 'center' }}
+
+
+
                             PaperProps={{
 
                                 elevation: 0,
+
                                 sx: {
-                                    minWidth: '40vw',
-                                    backgroundColor: 'var(--primary-color)',
-                                    // backgroundColor: 'rgba(0, 0, 0, 0.3)',
-                                    color: "white"
+                                    minWidth: '60vw',
+                                    // backgroundColor: 'var(--primary-color)',
+                                    // color: "white",   
+                                    
+                                    backgroundColor: "rgb(245, 245, 240)",
+                                    color: 'var(--primary-color)',
+
+                                    // backdropFilter: 'blur(7px)',
+
+
                                 }
                             
                             }}
@@ -91,7 +120,21 @@ function MenuItems() {
                         >
 
                             {menu.map((option) => (
-                                <MenuItem key={option.name} onClick={handleClose}>
+                                <MenuItem key={option.name} onClick={handleClose}
+                                
+                                    sx={{
+
+                                        width: '100%',
+                                        display: 'flex',
+                                        justifyContent: 'center',
+
+                                        fontSize: '1.5rem',
+
+                                        backgroundColor: view.type.name === option.name ? 'rgba(0, 0, 0, 0.1)' : 'transparent',
+
+                                    }}
+                                
+                                >
                                     {option.name}
                                 </MenuItem>
                             ))}
@@ -103,7 +146,17 @@ function MenuItems() {
 
                 : (
                     (
-                        <Tabs value={view.type.name} >
+                        <Tabs value={view.type.name}
+                        
+                            sx={{
+                                width: '100%',
+                                height: '100%',
+                                display: 'flex',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                            }}
+                        
+                        >
 
                             {menu.map((item, index) => {
 
@@ -116,7 +169,8 @@ function MenuItems() {
                                         value={item.name}
 
                                         sx={{
-                                            fontSize: '1.2rem',
+                                            fontSize: '1.5rem',
+                                            height: '110px',
                                         }}
 
                                         onClick={() => setView(item.component)}

@@ -2,6 +2,8 @@ import { Card, Typography } from '@mui/material'
 import { motion } from 'framer-motion'
 import React from 'react'
 
+import SpotifyIcon from '../../../global/images/SpotifyIcon.png'
+
 type Props = {
     album: SpotifyApi.AlbumObjectSimplified
 }
@@ -15,7 +17,7 @@ function AlbumCard({ album }: Props) {
             component={motion.div}
 
             whileHover={{ scale: 1.05 }}
-            
+
 
             sx={{
 
@@ -24,14 +26,17 @@ function AlbumCard({ album }: Props) {
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'contain',
 
-                width: "50%",
+                // width: "50%",
                 aspectRatio: "1/1",
+
+                // width: '100%',
+                // height: '50%',
 
                 maxWidth: '300px',
 
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'flex-end',
+                justifyContent: 'center',
                 alignItems: 'center',
 
             }}
@@ -40,9 +45,7 @@ function AlbumCard({ album }: Props) {
 
         >
 
-            <Typography variant='h4' color={"var(--bg-color)"} sx={{ fontSize: "25px" }} >
-                {album.name}
-            </Typography>
+            <img src={SpotifyIcon} alt="Spotify" style={{ width: "30%", height: "30%", filter: "invert(1)", opacity: "20%" }} />
 
         </Card>
     )

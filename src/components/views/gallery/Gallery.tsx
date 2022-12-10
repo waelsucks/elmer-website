@@ -79,6 +79,9 @@ function Gallery({ }: Props) {
 
                 overflow: 'hidden',
 
+                mr: 0.5,
+                ml: 0.5,
+
             }}
 
         >

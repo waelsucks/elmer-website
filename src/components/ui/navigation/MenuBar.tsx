@@ -7,27 +7,83 @@ import Menu from './Menu'
 type Props = {}
 
 function MenuBar({ }: Props) {
+
+    const { isMobile } = useContext(MobileContext)
+
     return (
         <Box
-        
+
             sx={{
+
                 width: '100%',
                 height: '100%',
 
-                display: 'grid',
-                gridTemplateColumns: useContext(MobileContext).isMobile ? '1fr 1fr' : '1fr 1fr 1fr',
-                gridTemplateRows: '1fr',
+                backgroundColor: 'rgba(50, 0, 0, 0.06)',
 
-                alignItems: 'center',
-                justifyItems: 'center',
-
+                borderBottom: '2.5px solid rgba(50, 70, 0, 0.1)',
 
             }}
-        
+
         >
-            {!useContext(MobileContext).isMobile && <FastLinks />}
-            <Typography sx={{ paddingTop: 4 }} variant='h2' fontWeight={"bold"} color="primary" >elmer</Typography>
-            <Menu />
+
+            {isMobile
+
+                ?
+
+                (
+                    <Box
+
+                        sx={{
+
+                            width: '100%',
+                            height: '100%',
+
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+
+                            gap: 0
+
+                        }}
+
+                    >
+
+                        <Typography sx={{ paddingTop: 4, pb: 0 }} variant='h2' fontWeight={isMobile ? "" : "bold"} fontFamily="Vonique" color="primary" >elmer</Typography>
+                        <Menu />
+
+                    </Box>
+
+                )
+
+                :
+
+                (
+                    <Box
+
+                        sx={{
+
+                            width: '100%',
+                            height: '100%',
+
+                            display: 'grid',
+                            gridTemplateColumns: '1fr 1fr 1fr',
+                            gridTemplateRows: '1fr',
+
+                            alignItems: 'center',
+                            justifyItems: 'center',
+
+                        }}
+
+                    >
+                        <FastLinks />
+                        <Typography sx={{ paddingTop: 4 }} variant='h2' fontWeight={"bold"} fontFamily="Vonique" color="primary" >elmer</Typography>
+                        <Menu />
+
+                    </Box>
+                )
+
+            }
 
         </Box>
     )

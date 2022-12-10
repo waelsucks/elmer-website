@@ -30,15 +30,16 @@ function About({ }: Props) {
                 height: '100%',
                 width: '100%',
 
-                paddingLeft: !isMobile ? 20 : 0,
-                paddingRight: !isMobile ? 20 : 0,
+                paddingLeft: !isMobile ? 20 : 2,
+                paddingRight: !isMobile ? 20 : 2,
+                pb: !isMobile ? 0 : 2,
 
             }}
 
         >
 
             <Typography variant='h2' color="primary" sx={{
-                textDecoration: 'underline',
+                // textDecoration: 'underline',
                 textDecorationThickness: '2.5px',
             }} >
                 ABOUT
