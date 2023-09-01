@@ -12,7 +12,7 @@ import Store from '../../view/store/Store';
 import Events from '../../view/events/Events';
 import Gallery from '../../view/gallery/Gallery';
 
-const instagramLink = "https://www.instagram.com/edvinelmersson/"
+const instagramLink = "https://www.instagram.com/edvinelmer/"
 const musicLink = "https://share.amuse.io/_H83CBZeBTot"
 const spotifyLink = "https://open.spotify.com/artist/2j17cmQqEsKLnQkeHKnJPt?si=hkaHCvAIQ2CvUiaGzOml3g"
 const youtubeLink = "https://www.youtube.com/channel/UC7lArkTGSeyrk_GLDrJjHqw"
