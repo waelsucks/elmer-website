@@ -8,9 +8,17 @@ import AlbumCard from '../../ui/data/AlbumCard'
 function Home() {
 
     const [albums, setAlbums] = useState<any[] | null>(null)
+    const [album, setAlbum] = useState({} as SpotifyApi.AlbumObjectSimplified)
 
+    
     const spotifyApi = useContext(SpotifyContext).spotify
     const token = useContext(SpotifyToken)
+
+    useEffect(() => {
+        spotifyApi.getAlbum("0qVRdmRa6A0SIlsD5eXu9O?si=SCrzm0ewST2QynTivXkQRQ").then((response) => {
+            setAlbum(response)
+        })
+    }, [])
 
     useEffect(() => {
 
@@ -63,7 +71,9 @@ function Home() {
 
             {/* <Divider sx={{ width: '100%', my: 5 }} /> */}
 
-            {albums?.length! > 0 && <AlbumCard album={albums![0]} />}
+            {/* {albums?.length! > 0 && <AlbumCard album={albums![0]} />} */}
+
+            {(album.images?.length > 0) && <AlbumCard album={album} />}
 
         </Box>
     )

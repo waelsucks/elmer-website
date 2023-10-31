@@ -11,6 +11,8 @@ import Home from './components/views/home/Home';
 import createCache from '@emotion/cache';
 import { CacheProvider } from '@emotion/react';
 
+import { SpotifyApi } from '@spotify/web-api-ts-sdk';
+
 function App() {
 
     const [view, setView] = useState(<Home />)
@@ -18,6 +20,8 @@ function App() {
 
     const token = useGetSpotifyToken()
     const spotify = new SpotifyWebApi()
+
+    // const sdk = SpotifyApi.withClientCredentials(process.env.REACT_APP_SPOTIFY_CLIENT_ID!, process.env.REACT_APP_SPOTIFY_CLIENT_SECRET!);
 
     useEffect(() => {
 

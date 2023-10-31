@@ -9,6 +9,7 @@ type Props = {
 }
 
 function AlbumCard({ album }: Props) {
+
     return (
         <Card
 
