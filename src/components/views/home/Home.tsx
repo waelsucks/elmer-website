@@ -4,37 +4,48 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Default } from '../../../global/Animations'
 import { MobileContext, SpotifyContext, SpotifyToken } from '../../../global/Contexts'
 import AlbumCard from '../../ui/data/AlbumCard'
+import SpotifyWebApi from 'spotify-web-api-js'
+import useGetSpotifyToken from '../../../hooks/useGetSpotifyToken'
 
 function Home() {
 
     const [albums, setAlbums] = useState<any[] | null>(null)
     const [album, setAlbum] = useState({} as SpotifyApi.AlbumObjectSimplified)
 
-    
-    const spotifyApi = useContext(SpotifyContext).spotify
-    const token = useContext(SpotifyToken)
+
+    // const spotifyApi = useContext(SpotifyContext).spotify
+    // const token = useContext(SpotifyToken)
+
+    console.log("Home rendered")
+
+    const spotifyApi = new SpotifyWebApi()
+    const token = useGetSpotifyToken()
 
     useEffect(() => {
+
+        spotifyApi.setAccessToken(token)
+
         spotifyApi.getAlbum("0qVRdmRa6A0SIlsD5eXu9O?si=SCrzm0ewST2QynTivXkQRQ").then((response) => {
             setAlbum(response)
         })
-    }, [])
 
-    useEffect(() => {
+    }, [token])
 
-        const getAlbums = async () => {
+    // useEffect(() => {
 
-            spotifyApi.setAccessToken(token)
+    //     const getAlbums = async () => {
 
-            const response = await spotifyApi.getArtistAlbums(process.env.REACT_APP_SPOTIFY_ID!)
+    //         spotifyApi.setAccessToken(token)
 
-            setAlbums(response.items)
+    //         const response = await spotifyApi.getArtistAlbums(process.env.REACT_APP_SPOTIFY_ID!)
 
-        }
+    //         setAlbums(response.items)
 
-        getAlbums()
+    //     }
 
-    }, [spotifyApi])
+    //     getAlbums()
+
+    // }, [spotifyApi])
 
     return (
         <Box

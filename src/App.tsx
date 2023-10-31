@@ -18,32 +18,32 @@ function App() {
     const [view, setView] = useState(<Home />)
     const [isMobile, setIsMobile] = useState(window.screen.width > 1200 ? false : true)
 
-    const token = useGetSpotifyToken()
-    const spotify = new SpotifyWebApi()
+    // const token = useGetSpotifyToken()
+    // const spotify = new SpotifyWebApi()
 
     // const sdk = SpotifyApi.withClientCredentials(process.env.REACT_APP_SPOTIFY_CLIENT_ID!, process.env.REACT_APP_SPOTIFY_CLIENT_SECRET!);
 
-    useEffect(() => {
+    // useEffect(() => {
 
-        spotify.setAccessToken(token)
+    //     spotify.setAccessToken(token)
 
-    }, [spotify, token])
+    // }, [token])
 
     return (
 
         <ViewContext.Provider value={{ view, setView }}>
-            <SpotifyContext.Provider value={{ spotify }}>
+            {/* <SpotifyContext.Provider value={{ spotify }}> */}
                 <MobileContext.Provider value={{ isMobile, setIsMobile }}>
 
-                    <SpotifyToken.Provider value={token}>
+                    {/* <SpotifyToken.Provider value={token}> */}
 
                         <MainView />
 
 
-                    </SpotifyToken.Provider>
+                    {/* </SpotifyToken.Provider> */}
 
                 </MobileContext.Provider>
-            </SpotifyContext.Provider>
+            {/* </SpotifyContext.Provider> */}
         </ViewContext.Provider>
 
     );
